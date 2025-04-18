@@ -23,7 +23,7 @@ int main()
 
     memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family=PF_INET;
-    serv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
+    serv_addr.sin_addr.s_addr=INADDR_ANY;
     serv_addr.sin_port=htons(PORT);
 
     if((sock=socket(PF_INET,SOCK_DGRAM,IPPROTO_UDP))<0){
