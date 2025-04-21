@@ -18,4 +18,4 @@ client: client.c
 	$(CC) -o $@ $^ $(LIBDIR)$(LIBS)
 
 clean:
-	-rm -f $(OBJS) $(TARGET) *.d
+	rm -f $(OBJS) $(TARGET) *~
