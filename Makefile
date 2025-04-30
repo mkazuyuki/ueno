@@ -1,21 +1,11 @@
-TARGET	= server client
-SRCS 	= server.c client.c
-OBJS 	= $(SRCS:.c=.o)
-CC  	= gcc
-LIBDIR  =
-LIBS    =
+TARGET	= heartbeat
+CFLAGS = -Wall -g
 
-
-# $(TARGET): $(OBJS)
-# 	$(CC) -o $@ $^ $(LIBDIR)$(LIBS)
 
 all: $(TARGET)
 
-server: server.c 
-	$(CC) -o $@ $^ $(LIBDIR)$(LIBS)
-
-client: client.c 
-	$(CC) -o $@ $^ $(LIBDIR)$(LIBS)
+$(TARGET): heartbeat.c
+	$(CC) -o $@ $<
 
 clean:
-	rm -f $(OBJS) $(TARGET) *~
+	rm -f $(TARGET) *~
